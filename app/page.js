@@ -140,20 +140,19 @@ export default function Home() {
           };
 
           const request = {
-            location: midpoint,
-            radius: 5000,
-            type: ["gas_station"],
+            query: "EV Charging Station",
+            fields: ["name", "formatted_address"],
+            locationBias: new google.maps.LatLng(midpoint.lat, midpoint.lng),
           };
-          setRouteInfo(info);
-          placesService.nearbySearch(request, (results, status) => {
+          
+          placesService.findPlaceFromQuery(request, (results, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
-              const chargingStations = results.slice(0, 5).map((place) => place.name).join(", ");
+              const chargingStations = results.slice(0, 5).map((place) => place.name + ', ' + place.formatted_address).join(", ");
               info += `<p><strong>Nearby EV Charging Stations:</strong> ${chargingStations}</p>`;
             } else {
               info += `<p><strong>Nearby EV Charging Stations:</strong> None found nearby.</p>`;
             }
 
-            console.log(info);
             setRouteInfo(info);
           });
         } else {
@@ -350,9 +349,11 @@ export default function Home() {
             >
               <i className="fas fa-map-marker-alt mr-3"></i> Find Route
             </button>
+            <div id="routeInfo" className="mt-6 text-left max-w-3xl mx-auto text-gray-700">
+              <div dangerouslySetInnerHTML={{ __html: routeInfo }} />
+            </div>
           </div>
           <div id="map" className="mt-12 rounded-xl shadow-lg" role="region" aria-label="Map showing route"></div>
-          <div id="routeInfo" className="mt-6 text-left max-w-3xl mx-auto text-gray-700"></div>
         </div>
       </section>
 
