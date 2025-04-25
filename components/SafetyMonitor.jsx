@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "./SafetyMonitor.css"; // Optional for styles
+import "./SafetyMonitor.css";
 
 const geoFence = {
   north: 50,
