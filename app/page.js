@@ -175,6 +175,8 @@ export default function Home() {
             <li><a href="#calculator" className="hover:text-green-600 transition">Calculator</a></li>
             <li><a href="#route" className="hover:text-green-600 transition">Route Finder</a></li>
             <li><a href="#contact" className="hover:text-green-600 transition">Contact</a></li>
+            <li><a href="#safety" className="hover:text-green-600 transition">Safety</a></li>
+            <li><a href="#monitor" className="hover:text-green-600 transition">Moniter</a></li>
           </ul>
     
           
@@ -200,6 +202,8 @@ export default function Home() {
           <li><a href="#calculator" className="block hover:text-green-600 transition">Calculator</a></li>
           <li><a href="#route" className="block hover:text-green-600 transition">Route Finder</a></li>
           <li><a href="#contact" className="block hover:text-green-600 transition">Contact</a></li>
+          <li><a href="#safety" className="hover:text-green-600 transition">Safety</a></li>
+          <li><a href="#monitor" className="hover:text-green-600 transition">Moniter</a></li>
         </ul>
       </nav>
 
@@ -260,23 +264,6 @@ export default function Home() {
               <h3 className="text-2xl font-semibold mb-3">Sustainable Design</h3>
               <p className="text-gray-700 leading-relaxed">Crafted with a focus on clean energy and modern, accessible web aesthetics.</p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-20 px-6 md:px-20 bg-gray-100 fade-in" aria-labelledby="testimonials-title">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 id="testimonials-title" className="text-4xl font-extrabold mb-14 text-gray-900">What Users Say</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <blockquote className="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2" tabIndex="0">
-              <p className="text-lg text-gray-700 italic mb-6">“This tool helped me understand how much I’m saving using my EV. Love the interface!”</p>
-              <footer className="font-semibold text-green-600">– Jamie R.</footer>
-            </blockquote>
-            <blockquote className="bg-white p-10 rounded-3xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2" tabIndex="0">
-              <p className="text-lg text-gray-700 italic mb-6">“Efficient route planning for EVs is a game-changer. It’s now part of my daily routine.”</p>
-              <footer className="font-semibold text-blue-600">– Morgan T.</footer>
-            </blockquote>
           </div>
         </div>
       </section>
@@ -404,9 +391,13 @@ export default function Home() {
       </section>
 
       {/* Safety Monitoring  */}
+      <div id="safety">
       <SafetyMonitor/>
+      </div>
       {/* Monitoring Dashboard */}
+      <div id="monitor">
       <Dashboard/>
+      </div>
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-8">
