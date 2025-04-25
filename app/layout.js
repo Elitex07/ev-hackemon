@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        {/* Add Google Maps API script */}
+        
         <script
           async
           defer
