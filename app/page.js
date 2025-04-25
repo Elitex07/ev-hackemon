@@ -344,6 +344,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Safety Monitoring  */}
+      <div id="safety">
+      <SafetyMonitor/>
+      </div>
+      {/* Monitoring Dashboard */}
+      <div id="monitor">
+      <Dashboard/>
+      </div>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 md:px-20 bg-white fade-in">
         <div className="max-w-3xl mx-auto text-center">
@@ -390,14 +399,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Safety Monitoring  */}
-      <div id="safety">
-      <SafetyMonitor/>
-      </div>
-      {/* Monitoring Dashboard */}
-      <div id="monitor">
-      <Dashboard/>
-      </div>
+      
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-8">
