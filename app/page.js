@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from "react";
 import { Chart ,BarController,  BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
+import SafetyMonitor from "@/components/SafetyMonitor";
+import Dashboard from "@/components/Dashboard";
 
 Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -396,7 +398,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Safety Monitoring  */}
+      <SafetyMonitor/>
+      {/* Monitoring Dashboard */}
+      <Dashboard/>
       
+      {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-8">
         <p>&copy; 2025 EV EcoTools. All rights reserved.</p>
       </footer>
