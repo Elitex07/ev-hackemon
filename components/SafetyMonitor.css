@@ -1,0 +1,13 @@
+
+.danger-mode {
+    background: linear-gradient(to bottom right, #ffe5e5, #fecaca, #f87171) !important;
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
+    transition: all 0.5s ease-in-out;
+  }
+  .danger-text {
+    color: #b91c1c !important;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    font-weight: 800;
+  }
+  
