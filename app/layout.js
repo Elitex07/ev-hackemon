@@ -34,6 +34,12 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        {/* Add Google Maps API script */}
+        <script
+          async
+          defer
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places&callback=initMap`}
+        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

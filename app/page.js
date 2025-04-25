@@ -14,7 +14,7 @@ export default function Home() {
   const [placesService, setPlacesService] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    
       // Load saved dark mode preference
       const savedDarkMode = localStorage.getItem("darkMode");
       if (savedDarkMode === "enabled") {
@@ -37,7 +37,7 @@ export default function Home() {
         setDirectionsRenderer(new google.maps.DirectionsRenderer({ map: mapInstance }));
         setPlacesService(new google.maps.places.PlacesService(mapInstance));
       }
-    }
+    
   }, []);
 
   const toggleDarkMode = () => {
@@ -111,10 +111,12 @@ export default function Home() {
         destination: end,
         travelMode: google.maps.TravelMode.DRIVING,
         drivingOptions: {
-          trafficModel: "best_guess",
+          trafficModel: "bestguess",
+          departureTime: new Date(),
         },
       },
       (response, status) => {
+        console.log(status);
         if (status === "OK") {
           directionsRenderer.setDirections(response);
 
@@ -138,9 +140,9 @@ export default function Home() {
           const request = {
             location: midpoint,
             radius: 5000,
-            type: ["electric_vehicle_charging_station"],
+            type: ["gas_station"],
           };
-
+          setRouteInfo(info);
           placesService.nearbySearch(request, (results, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
               const chargingStations = results.slice(0, 5).map((place) => place.name).join(", ");
@@ -148,6 +150,8 @@ export default function Home() {
             } else {
               info += `<p><strong>Nearby EV Charging Stations:</strong> None found nearby.</p>`;
             }
+
+            console.log(info);
             setRouteInfo(info);
           });
         } else {
@@ -339,7 +343,7 @@ export default function Home() {
               aria-label="Destination"
             />
             <button
-              id="findRouteBtn"
+              id="findRouteBtn" onClick={findRoute}
               className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-4 rounded-full shadow-lg transition transform hover:-translate-y-1 w-full focus:outline-none focus:ring-4 focus:ring-blue-400"
             >
               <i className="fas fa-map-marker-alt mr-3"></i> Find Route
