@@ -288,7 +288,7 @@ export default function Home() {
             <input
               type="number"
               id="distance"
-              className="w-full max-w-md p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full max-w-md p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               placeholder="Distance in km"
               min="0"
               aria-label="Distance in kilometers"
@@ -326,14 +326,14 @@ export default function Home() {
           <div className="space-y-6">
             <input
               id="start"
-              className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-4 text-black border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Start Location"
               type="text"
               aria-label="Start Location"
             />
             <input
               id="end"
-              className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-4 text-black border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Destination"
               type="text"
               aria-label="Destination"
@@ -359,7 +359,7 @@ export default function Home() {
           </h2>
           <form id="contactForm" className="space-y-8" noValidate>
             <input
-              className="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full text-black p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
               type="text"
               placeholder="Your Name"
               name="name"
@@ -368,7 +368,7 @@ export default function Home() {
               aria-label="Your Name"
             />
             <input
-              className="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full text-black p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
               type="email"
               placeholder="Your Email"
               name="email"
@@ -377,7 +377,7 @@ export default function Home() {
               aria-label="Your Email"
             />
             <textarea
-              className="w-full p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full text-black p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-green-500"
               rows="5"
               placeholder="Your Message"
               name="message"
